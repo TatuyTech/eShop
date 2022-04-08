@@ -1,0 +1,33 @@
+﻿@page
+@model eShop.Pages.Admin.EditProductModel
+@{
+    ViewData["Title"] = "Admin - Edit Product";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <img class="esh-catalog-thumbnail" src="@Model.ProductVM.PictureUri" />
+            <form asp-page="/Admin/EditProduct" method="post">
+                <input type="hidden" asp-for="ProductVM.Id" name="Id" />
+                <div class="form-group">
+                    <label asp-for="ProductVM.Name"></label>
+                    <input asp-for="ProductVM.Name" name="Name" class="form-control" />
+                    <span asp-validation-for="ProductVM.Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductVM.Description"></label>
+                    <input asp-for="ProductVM.Description" name="Description" class="form-control" />
+                    <span asp-validation-for="ProductVM.Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductVM.Price"></label>
+                    <input asp-for="ProductVM.Price" name="Price" class="form-control" />
+                    <span asp-validation-for="ProductVM.Price"></span>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" value="Save" class="esh-catalog-button" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
